@@ -1,0 +1,25 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: smartbills01
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: user-service
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  versionFunctions: true
+  stage: "dev"
+  region: ap-south-1
+  httpApi:
+    cors: true
+
+functions:
+  send-top:
+    handler: app/handler.SendOtpRequest
+    events:
+      - httpApi:
+          path: /auth/send-otp
+          method: post
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
