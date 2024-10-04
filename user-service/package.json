@@ -12,17 +12,22 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "sequelize-cli": "^6.6.2",
     "serverless-dotenv-plugin": "^1.1.5",
     "serverless-offline": "^14.3.2"
   },
   "dependencies": {
     "@middy/core": "^5.5.0",
     "@middy/http-json-body-parser": "^5.5.0",
+    "@sequelize/postgres": "^7.0.0-alpha.42",
     "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1691.0",
     "joi": "^17.13.3",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
-    "passport-oauth2": "^1.8.0"
+    "passport-oauth2": "^1.8.0",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
   }
 }
