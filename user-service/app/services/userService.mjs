@@ -19,17 +19,17 @@ class UserService {
       if (!validateNumber(phoneNumber)) {
         return ErrorResponse(400, new Error("Invalid Mobile Number"));
       } else {
-        // const sendOtp = await sendOtpHelper(phoneNumber, GENRATED_OTP);
-        // console.log(sendOtp);
-        // if (sendOtp.data && sendOtp.data.MessageId) {
-        //   console.log("[USER SERVICE]: OTP sent successfully");
-        //   return SuccessResponse(200, {
-        //     message: "OTP sent successfully",
-        //     data: sendOtp.data.MessageId,
-        //     status: "success",
-        //     code: 200,
-        //   });
-        // }
+        const sendOtp = await sendOtpHelper(phoneNumber, GENRATED_OTP);
+        console.log(sendOtp);
+        if (sendOtp.data && sendOtp.data.MessageId) {
+          console.log("[USER SERVICE]: OTP sent successfully");
+          return SuccessResponse(200, {
+            message: "OTP sent successfully",
+            data: sendOtp.data.MessageId,
+            status: "success",
+            code: 200,
+          });
+        }
       }
     } catch (error) {
       return ErrorResponse(500, error);

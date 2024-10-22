@@ -13,7 +13,7 @@ provider:
     cors: true
 
 functions:
-  send-top:
+  send-otp:
     handler: app/handler.SendOtpRequest
     events:
       - httpApi:
